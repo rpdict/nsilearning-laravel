@@ -15,22 +15,22 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
-//    public function handle($request, Closure $next, $guard = null)
-//    {
+    public function handle($request, Closure $next, $guard = null)
+    {
 //        if (Auth::guard($guard)->check()) {
-//            return redirect('/');
+//            return redirect('/aaa');
 //        }
-//
-//        return $next($request);
-//    }
-    public function handle($request, Closure $next, $guard = null){
-        if (Auth::guard($guard)->check()) {
-            if (!Auth::user()->is_admin) {
-                return new RedirectResponse(url('/'));
-            } else {
-                return new RedirectResponse(url('/aaa'));
-            }
-        }
+
         return $next($request);
     }
+//    public function handle($request, Closure $next){
+//        if (Auth::check()) {
+//            if (!Auth::user()->is_admin) {
+//                return new RedirectResponse(url('/'));
+//            } else {
+//                return new RedirectResponse(url('/aaa'));
+//            }
+//        }
+//        return $next($request);
+//    }
 }

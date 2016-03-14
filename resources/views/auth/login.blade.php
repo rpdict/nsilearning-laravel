@@ -9,7 +9,7 @@
     <div class="form-group">
       <label for="email" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10 col-md-6">
-        <input type="text" class="form-control" id="email" name="email" >
+        <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}">
       </div>
     </div>
     <div class="form-group">

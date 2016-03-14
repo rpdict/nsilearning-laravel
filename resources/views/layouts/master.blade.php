@@ -9,9 +9,14 @@
     {{--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>--}}
     <link rel="stylesheet" href="/css/mystyle.css">
     <link rel="stylesheet" href="/css/app.css">
-      <link href="/css/sticky-footer.css" rel="stylesheet">
   </head>
   <body>
+
+  @if (Auth::check())
+    {{print_r(Auth::user()->name)}}
+  @endif
+
+
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -28,6 +33,11 @@
             <li><a href="/topics">Topics</a></li>
             <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
+            @if(!Auth::guest())
+                {{--@if (Auth::user()->is_admin)--}}
+                      <li><a href="/admin">admin</a></li>
+                {{--@endif--}}
+            @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">
             @if (Auth::user())
@@ -41,7 +51,7 @@
         </div>
       </div>
     </nav>
-    @if (Request::getRequestUri() != '/auth/register')
+    @if (Request::getRequestUri() != '/auth/register' and Request::getRequestUri() != '/auth/login')
     <div class="marginbottom">
         <img src="images/IMG_2466.png" width="100%" height="100%" />
     </div>

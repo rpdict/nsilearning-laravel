@@ -14,6 +14,12 @@ use Illuminate\Routing\Controller;
 class UsersController extends Controller {
 //    protected $layout = "layouts.master";
 
+    public function showUsers()
+    {
+        return view('users', [
+            'users' => User::getRecentlyUsers()
+        ]);
+    }
     /**
      * 显示所给定的用户个人数据。
      *

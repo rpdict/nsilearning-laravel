@@ -21,8 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('aaa', 'UsersController@store');
+//Route::get('aaa', 'UsersController@store');
 
+//Route::controllers([
+//    'auth' => 'Auth\AuthController',
+//    'password' => 'Auth\PasswordController'
+//]);
 
 Route::get('/topics', 'TopicsController@showLatestTopics');
 Route::get('/tags', 'TagController@showAllTags');
@@ -31,9 +35,9 @@ Route::get('/about', 'UsersController@About');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+//Route::get('auth/login', 'Auth\AuthController@getLogin');
+//Route::post('auth/login', 'Auth\AuthController@postLogin');
+//Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +52,12 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::group(['middleware' => ['web']], function () {
     //
+    Route::get('auth/login', 'Auth\AuthController@getLogin');
+    Route::post('auth/login', 'Auth\AuthController@postLogin');
+    Route::get('auth/logout', 'Auth\AuthController@getLogout');
+    Route::get('aaa', 'UsersController@store');
+    Route::get('/about', 'UsersController@About');
+
 });
 
 
