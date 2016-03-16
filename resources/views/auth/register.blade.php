@@ -8,13 +8,13 @@
     <div class="form-group">
       <label for="name" class="col-sm-2 control-label">Name</label>
       <div class="col-sm-10 col-md-6">
-        <input type="text" class="form-control" id="name" name="name" >
+        <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
       </div>
     </div>
     <div class="form-group">
       <label for="email" class="col-sm-2 control-label">Email</label>
       <div class="col-sm-10 col-md-6">
-        <input type="email" class="form-control" id="name" name="email" >
+        <input type="email" class="form-control" id="name" name="email" value="{{ old('email') }}">
       </div>
     </div>
     <div class="form-group">

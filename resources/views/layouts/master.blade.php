@@ -11,12 +11,6 @@
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-
-  @if (Auth::check())
-    {{print_r(Auth::user()->name)}}
-  @endif
-
-
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -35,7 +29,7 @@
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
                 {{--@if (Auth::user()->is_admin)--}}
-                      <li><a href="/admin">admin</a></li>
+                      <li><a href="/admin">Admin</a></li>
                 {{--@endif--}}
             @endif
           </ul>
