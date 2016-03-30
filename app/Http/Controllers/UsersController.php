@@ -9,7 +9,7 @@
 namespace Demo\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Demo\Http\Controllers\Controller;
 
 class UsersController extends Controller {
 //    protected $layout = "layouts.master";

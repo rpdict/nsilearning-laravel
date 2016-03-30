@@ -8,7 +8,7 @@
         <div class="col-md-12 topic-list">
             <h1>Hello</h1>
             <?php
-                foreach (range(0,1000) as $x){
+                foreach (range(0,100) as $x){
             echo '</br>1';
 
             };

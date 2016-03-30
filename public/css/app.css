@@ -5758,8 +5758,10 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   border-color: #e7e7e7; }
 
-.marginbottom {
-  margin-bottom: 70px; }
+.new_information {
+  background: url("../images/header.jpg");
+  width: 1440px;
+  height: 450px; }
 
 .margintop {
   margin-top: 50px; }

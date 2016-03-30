@@ -24,7 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/topics">Topics</a></li>
+            <li><a href="/">Blog</a></li>
             <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
@@ -36,7 +36,9 @@
           <ul class="nav navbar-nav navbar-right">
             @if (Auth::user())
               <li><a href="/settings">{{ Auth::user()->name }}</a></li>
-              <li><a href="/topics/create">Create Topic</a></li>
+              @if(!Auth::guest())
+                <li><a href="/topics/create">Create Blog</a></li>
+              @endif
             @else
               <li><a href="/auth/login">Login</a></li>
               <li><a href="/auth/register">Register</a></li>
@@ -46,8 +48,8 @@
       </div>
     </nav>
     @if (Request::getRequestUri() != '/auth/register' and Request::getRequestUri() != '/auth/login')
-    <div class="marginbottom">
-        <img src="images/IMG_2466.png" width="100%" height="100%" />
+    <div class="new_information">
+        {{--<img id="myImage" src="images/miniheader.jpg" width="100%" />--}}
     </div>
     @endif
     <div class="container margintop">
@@ -81,5 +83,12 @@
     <script>
         $("nav.navbar-fixed-top").autoHidingNavbar();
     </script>
+    {{--<script type="text/javascript">--}}
+        {{--var img = new Image();--}}
+        {{--img.src = "images/header.jpg";--}}
+        {{--img.onload = function() {--}}
+            {{--document.getElementById('myImage').src = this.src;--}}
+        {{--}--}}
+    {{--</script>--}}
   </body>
 </html>

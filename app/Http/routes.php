@@ -12,38 +12,38 @@
 */
 
 
+Route::get('/', 'BlogController@index');
+Route::get('/blog/{slug}', 'BlogController@showPost');
+
 
 Route::get('user/{id}', function ($id) {
     return view('greeting', ['name' => $id]);
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::get('aaa', 'UsersController@store');
 
-Route::get('/', 'TopicsController@showLatestTopics');
-Route::get('/topics', 'TopicsController@showLatestTopics');
-Route::get('/tags', 'TagController@showAllTags');
+//Route::get('/', 'TopicsController@showLatestTopics');
+//Route::get('/topics', 'TopicsController@showLatestTopics');
+//Route::get('/tags', 'TagController@showAllTags');
 
-Route::get('/topics/create', 'TopicController@showCreateTopic');
-Route::get('/topics/{topic}/tags/add', 'TopicController@showAddTag');
-Route::get('/tags/create', 'TagController@showCreateTag');
+//Route::get('/topics/create', 'TopicController@showCreateTopic');
+//Route::get('/topics/{topic}/tags/add', 'TopicController@showAddTag');
+//Route::get('/tags/create', 'TagController@showCreateTag');
 
-Route::get('/topics/{topic}', 'TopicController@view');
-Route::get('/tags/{tag}', 'TagController@showTag');
+//Route::get('/topics/{topic}', 'TopicController@view');
+//Route::get('/tags/{tag}', 'TagController@showTag');
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::post('/topics', 'TopicController@create');
-    Route::post('/tags', 'TagController@create');
-    Route::post('/topics/{topic}/replies', 'TopicController@createReply');
-    Route::post('/topics/{topic}/tags', 'TopicController@addTag');
-});
+//Route::group(['middleware' => 'auth'], function() {
+//    Route::post('/topics', 'TopicController@create');
+//    Route::post('/tags', 'TagController@create');
+//    Route::post('/topics/{topic}/replies', 'TopicController@createReply');
+//    Route::post('/topics/{topic}/tags', 'TopicController@addTag');
+//});
 
-
-Route::get('/topics', 'TopicsController@showLatestTopics');
-Route::get('/tags', 'TagController@showAllTags');
 Route::get('/about', 'UsersController@About');
 
 Route::get('auth/register', 'Auth\AuthController@getRegister');
