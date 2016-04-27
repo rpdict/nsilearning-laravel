@@ -12,37 +12,29 @@
 */
 
 
-Route::get('/', 'BlogController@index');
-Route::get('/blog/{slug}', 'BlogController@showPost');
+Route::get('/', function () {
+    return redirect('/blog');
+});
+
+Route::get('blog', 'BlogsController@index');
+Route::get('/blog/show/{slug}', 'BlogsController@showPost');
+Route::get('blog/create', 'BlogController@showCreateBlog');
+Route::group(['middleware' => 'auth'], function() {
+    Route::post('/blog/create', 'BlogController@create');
+    Route::post('/blog/show/{slug}/replies', 'BlogController@createReply');
+});
+//Route::get('/blog/show/{slug}', 'BlogController@view');
+
+
 
 
 Route::get('user/{id}', function ($id) {
     return view('greeting', ['name' => $id]);
 });
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('aaa', 'UsersController@store');
 
-//Route::get('/', 'TopicsController@showLatestTopics');
-//Route::get('/topics', 'TopicsController@showLatestTopics');
-//Route::get('/tags', 'TagController@showAllTags');
-
-//Route::get('/topics/create', 'TopicController@showCreateTopic');
-//Route::get('/topics/{topic}/tags/add', 'TopicController@showAddTag');
-//Route::get('/tags/create', 'TagController@showCreateTag');
-
-//Route::get('/topics/{topic}', 'TopicController@view');
-//Route::get('/tags/{tag}', 'TagController@showTag');
-
-//Route::group(['middleware' => 'auth'], function() {
-//    Route::post('/topics', 'TopicController@create');
-//    Route::post('/tags', 'TagController@create');
-//    Route::post('/topics/{topic}/replies', 'TopicController@createReply');
-//    Route::post('/topics/{topic}/tags', 'TopicController@addTag');
-//});
 
 Route::get('/about', 'UsersController@About');
 

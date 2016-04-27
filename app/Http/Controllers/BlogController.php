@@ -2,21 +2,37 @@
 
 namespace Demo\Http\Controllers;
 
-use Demo\Post;
-use Carbon\Carbon;
+use Illuminate\Http\Request;
+
+use Demo\Http\Requests;
+use Demo\Http\Controllers\Controller;
+use Redirect, Input;
 
 class BlogController extends Controller
 {
-    public function index()
-    {
-        $posts = Post::where('published_at', '<=', Carbon::now())
-            ->orderBy('published_at', 'desc')
-            ->paginate(config('blog.posts_per_page'));
-        return view('blog.index', compact('posts'));
+    //
+    public function showCreateBlog(){
+        return view('blog.create');
     }
-    public function showPost($slug)
+    public function create(Request $request){
+        $blog = Blog::createBlog($request->user(), $request->only('title', 'body'));
+        return redirect("/blog/show/{$blog->slug}");
+    }
+//    public function view($topicId)
+//    {
+//        $topic = Topic::findOrFail($topicId);
+//
+//        return view('topic.view', [
+//            'topic' => $topic,
+//            'replies' => $topic->replies()->paginate()
+//        ]);
+//    }
+
+    public function createReply(Request $request, $blogSlug)
     {
-        $post = Post::whereSlug($slug)->firstOrFail();
-        return view('blog.post')->withPost($post);
+        $blog = Topic::findOrFail($blogSlug);
+        $blog->createReply($request->user(), $request->only('body'));
+        $blog->touch();
+        return redirect("/blog/show/{$blog->slug}");
     }
 }

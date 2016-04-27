@@ -37,7 +37,7 @@
             @if (Auth::user())
               <li><a href="/settings">{{ Auth::user()->name }}</a></li>
               @if(!Auth::guest())
-                <li><a href="/topics/create">Create Blog</a></li>
+                <li><a href="/blog/create">Create Blog</a></li>
               @endif
             @else
               <li><a href="/auth/login">Login</a></li>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </nav>
-    @if (Request::getRequestUri() != '/auth/register' and Request::getRequestUri() != '/auth/login')
+    @if (Request::getRequestUri() == '/blog')
     <div class="new_information">
         {{--<img id="myImage" src="images/miniheader.jpg" width="100%" />--}}
     </div>
