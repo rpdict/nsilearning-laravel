@@ -24,7 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/">Blog</a></li>
+            <li><a href="/blog">Blog</a></li>
             <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
@@ -47,11 +47,12 @@
         </div>
       </div>
     </nav>
-    @if (Request::getRequestUri() == '/blog')
-    <div class="new_information">
+    @yield('welcome')
+    {{--@if (Request::getRequestUri() == '/blog')--}}
+    {{--<div class="new_information">--}}
         {{--<img id="myImage" src="images/miniheader.jpg" width="100%" />--}}
-    </div>
-    @endif
+    {{--</div>--}}
+    {{--@endif--}}
     <div class="container margintop">
         <div class='row'>
           <div class="col-md-9">
@@ -63,7 +64,7 @@
               <div class="panel-body">
                 <ul>
                   <li>
-{{--                    {{ $globalStatistics['topicsCount'] }} --}}
+{{--                    {{ $globalStatistics['topicsCount'] }}--}}
                     Topics
                   </li>
                   <li>
