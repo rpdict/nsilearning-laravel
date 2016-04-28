@@ -3,7 +3,17 @@
 @section('title', 'Welcome')
 
 @section('welcome')
-<div class="new_information"></div>
+
+<style>
+    body {
+        background-color: #f3f3f3;
+    }
+</style>
+<div class="new_information">
+    <div class="container">
+        <h1 class="margintop">welcome to visit nsilearning website!</h1>
+    </div>
+</div>
 @endsection
 @section('content')
 <div class="container">

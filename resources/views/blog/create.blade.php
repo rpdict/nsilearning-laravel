@@ -3,7 +3,7 @@
 @section('title', 'Create Topic')
 
 @section('content')
-    <form class="form-horizontal" method="post" action="/topics">
+    <form class="form-horizontal" method="post" action="/blog/create">
         {!! csrf_field() !!}
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Title</label>

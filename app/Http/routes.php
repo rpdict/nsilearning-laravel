@@ -12,9 +12,6 @@
 */
 
 
-//Route::get('/', function () {
-//    return redirect('/blog');
-//});
 
 Route::get('/', function(){
     return view('welcome');
@@ -22,9 +19,14 @@ Route::get('/', function(){
 
 Route::get('blog', 'BlogsController@index');
 Route::get('/blog/show/{slug}', 'BlogsController@showPost');
+
+
 Route::get('blog/create', 'BlogController@showCreateBlog');
+//Route::post('/blog/create', 'BlogController@store');
+
+
 Route::group(['middleware' => 'auth'], function() {
-    Route::post('/blog/create', 'BlogController@create');
+    Route::post('/blog/create', 'BlogController@store');
     Route::post('/blog/show/{slug}/replies', 'BlogController@createReply');
 });
 //Route::get('/blog/show/{slug}', 'BlogController@view');
@@ -48,6 +50,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+
 
 /*
 |--------------------------------------------------------------------------
