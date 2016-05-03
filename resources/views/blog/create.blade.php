@@ -12,9 +12,9 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="body" class="col-sm-2 control-label">Body</label>
+            <label for="body" class="col-sm-2 control-label">Content</label>
             <div class="col-sm-10 col-md-8">
-                <textarea class="form-control" id="body" name="body" rows="5"></textarea>
+                <textarea class="form-control" id="content" name="content" rows="5"></textarea>
             </div>
         </div>
         <div class="form-group">
