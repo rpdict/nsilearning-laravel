@@ -14,9 +14,9 @@ class BlogsController extends Controller
             ->paginate(config('blog.posts_per_page'));
         return view('blog.index', compact('posts'));
     }
-    public function showPost($slug)
+    public function showPost($id)
     {
-        $post = Post::whereSlug($slug)->firstOrFail();
+        $post = Post::whereId($id)->firstOrFail();
         return view('blog.post')->withPost($post);
     }
 }

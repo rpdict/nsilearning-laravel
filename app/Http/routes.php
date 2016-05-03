@@ -18,19 +18,16 @@ Route::get('/', function(){
 });
 
 Route::get('blog', 'BlogsController@index');
-Route::get('/blog/show/{slug}', 'BlogsController@showPost');
+Route::get('/blog/show/{id}', 'BlogsController@showPost');
 
 
 Route::get('blog/create', 'BlogController@showCreateBlog');
-//Route::post('/blog/create', 'BlogController@store');
 
 
 Route::group(['middleware' => 'auth'], function() {
     Route::post('/blog/create', 'BlogController@create');
     Route::post('/blog/show/{slug}/replies', 'BlogController@createReply');
 });
-//Route::get('/blog/show/{slug}', 'BlogController@view');
-
 
 
 
