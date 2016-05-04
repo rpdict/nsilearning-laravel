@@ -28,9 +28,9 @@
             <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
-                {{--@if (Auth::user()->is_admin)--}}
+                @if (Auth::user()->is_admin)
                       <li><a href="/admin">Admin</a></li>
-                {{--@endif--}}
+                @endif
             @endif
           </ul>
           <ul class="nav navbar-nav navbar-right">
