@@ -15,9 +15,15 @@ use Illuminate\Support\Facades\Redirect;
 class BlogController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
     public function showCreateBlog(){
         return view('blog.create');
     }
+
     public function create(Request $request){
         $blog = Post::createBlog($request->user(), $request->only('title', 'content'));
         return redirect("/blog/show/{$blog->id}");
