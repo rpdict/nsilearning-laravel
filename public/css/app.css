@@ -5769,6 +5769,17 @@ body {
 .margintop {
   margin-top: 50px; }
 
+.main {
+  min-height: 650px; }
+
+.main-footer {
+  background: #fff;
+  padding: 15px;
+  color: #444;
+  border-top: 1px solid #d2d6de;
+  border-bottom: 1px solid #d2d6de;
+  width: 100%; }
+
 .topic-list .topic-item .topic-avatar a img {
   width: 64px;
   height: 64px; }

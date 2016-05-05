@@ -22,6 +22,17 @@ body {
   margin-top: 50px;
 }
 
+.main{
+  min-height: 650px;
+}
+.main-footer {
+  background: #fff;
+  padding: 15px;
+  color: #444;
+  border-top: 1px solid #d2d6de;
+  border-bottom: 1px solid #d2d6de;
+  width:100%;
+}
 
 .topic-list {
   .topic-item {

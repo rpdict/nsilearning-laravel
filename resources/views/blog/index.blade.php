@@ -12,7 +12,7 @@
         @foreach ($posts as $post)
             <li>
                 <a href="/blog/show/{{ $post->id }}">{{ $post->title }}</a>
-                <em>({{ $post->published_at->format('M jS Y g:ia') }})</em>
+                <em>({{ $post->created_at->format('M jS Y g:ia') }})</em>
                 <p>
                     {{ str_limit($post->content) }}
                 </p>

@@ -9,6 +9,9 @@
     {{--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>--}}
     <link rel="stylesheet" href="/css/mystyle.css">
     <link rel="stylesheet" href="/css/app.css">
+    <style>
+
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -24,7 +27,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/blog">Blog</a></li>
+            <li><a href="/blog">Blogs</a></li>
             <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
@@ -53,7 +56,7 @@
         {{--<img id="myImage" src="images/miniheader.jpg" width="100%" />--}}
     {{--</div>--}}
     {{--@endif--}}
-    <div class="container margintop">
+    <div class="container margintop main">
         <div class='row'>
           <div class="col-md-9">
             @yield('content')
@@ -91,5 +94,11 @@
             {{--document.getElementById('myImage').src = this.src;--}}
         {{--}--}}
     {{--</script>--}}
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 0.0.1
+        </div>
+        <strong>Copyright © 2015-2016 <a href="#">nsilearning</a>.</strong> All rights reserved.
+    </footer>
   </body>
 </html>

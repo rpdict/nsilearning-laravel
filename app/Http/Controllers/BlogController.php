@@ -39,14 +39,6 @@ class BlogController extends Controller
 //        ]);
 //    }
 
-//    public function store() {
-//        if (Post::create(Input::all())) {
-//            return Redirect::back();
-//        } else {
-//            return Redirect::back()->withInput()->withErrors('评论发表失败！');
-//        }
-//    }
-
 //    public function createReply(Request $request, $blogSlug)
 //    {
 //        $blog = Topic::findOrFail($blogSlug);
