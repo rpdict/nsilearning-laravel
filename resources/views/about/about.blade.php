@@ -5,14 +5,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12 topic-list">
+        <div class="col-md-12">
             <h1>Hello</h1>
-            <?php
-                foreach (range(0,100) as $x){
-            echo '</br>1';
 
-            };
-            ?>
+            GitHub:<a href="https://github.com/rpdict/nsilearning-laravel">https://github.com/rpdict/nsilearning-laravel</a>
         </div>
     </div>
 </div>

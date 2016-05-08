@@ -34,32 +34,6 @@ body {
   width:100%;
 }
 
-.topic-list {
-  .topic-item {
-    @extend .media;
-
-    .topic-avatar {
-      @extend .media-left;
-
-      a img {
-        @extend .media-object;
-        width: 64px;
-        height: 64px;
-      }
-    }
-
-    .topic-header {
-      header {
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      @extend .media-body;
-    }
-  }
-}
-
-
 .img_hover{
   //height: 140px;
   height: 51.5%;

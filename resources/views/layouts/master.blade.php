@@ -41,6 +41,7 @@
               <li><a href="/settings">{{ Auth::user()->name }}</a></li>
               @if(!Auth::guest())
                 <li><a href="/blog/create">Create Blog</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
               @endif
             @else
               <li><a href="/auth/login">Login</a></li>
@@ -98,7 +99,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 0.0.1
         </div>
-        <strong>Copyright © 2015-2016 <a href="#">nsilearning</a>.</strong> All rights reserved.
+        <strong>Copyright © 2015-<?php echo date("Y")?> <a href="https://github.com/rpdict">rpdict</a>.</strong> All rights reserved.
     </footer>
   </body>
 </html>
