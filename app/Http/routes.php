@@ -27,7 +27,7 @@ Route::get('/blog/show/{id}', 'BlogsController@showPost');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('blog/create', 'BlogController@showCreateBlog');
     Route::post('/blog/create', 'BlogController@create');
-    Route::post('/blog/show/{slug}/replies', 'BlogController@createReply');
+    Route::post('/blog/show/{id}/replies', 'BlogController@createReply');
 });
 
 

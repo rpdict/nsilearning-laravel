@@ -8,11 +8,13 @@
 
 namespace Demo\Http\Controllers;
 
+use Demo\User;
 use Illuminate\Http\Request;
 use Demo\Http\Controllers\Controller;
+use Illuminate\Support\Facades\View;
 
 class UsersController extends Controller {
-//    protected $layout = "layouts.master";
+    protected $layout = "layouts.master";
 
     public function showUsers()
     {
@@ -34,7 +36,7 @@ class UsersController extends Controller {
         return view('greeting', ['name' => $name]);
     }
 
-    public function About(Request $request)
+    public function About()
     {
         //
         return view('about.about');

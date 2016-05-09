@@ -69,7 +69,7 @@
                 <ul>
                   <li>
 {{--                    {{ $globalStatistics['topicsCount'] }}--}}
-                    Topics
+                    Blogs
                   </li>
                   <li>
 {{--                    {{ $globalStatistics['usersCount'] }}--}}

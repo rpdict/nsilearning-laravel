@@ -24,9 +24,9 @@
             <a href="#">
                 <img class="courseimage" src="images/2.png">
                 <div class="img_hover">
-                    <p class="kcjj">本课程专为变成初学者设计，使用流行的python语言。</p>
+                    <p class="kcjj">欢迎访问北软爱学会的最新动态！功能正在开发中，敬请谅解。</p>
                     <div class="courseinfo">
-                        <p>中文字幕</p>
+                        <p>十分推荐</p>
                     </div>
                     <div class="coursetime">
                         <p>2015年3月3日</p>
@@ -35,7 +35,7 @@
             </a>
             <h3 class="course-title">
                 <a href="#">
-                    <span class="course-name">Programming for Everybody (Getting Started with Python)</span></br>
+                    <span class="course-name">近期活动</span></br>
                     <span class="course-name-ch">人人都懂的编程课（Python）</span>
                 </a>
             </h3>

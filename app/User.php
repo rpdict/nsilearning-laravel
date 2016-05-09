@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function usersCount()
+    {
+        return self::count();
+    }
+
+    public static function getRecentlyUsers()
+    {
+        return self::orderBy('updated_at', 'desc')->paginate(48);
+    }
 }

@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next){
         if (Auth::check()) {
             if (!Auth::user()->is_admin) {
-                return redirect('/');
+                return view('errors.AccessDenied',['errinfo'=>'If U want to create blog, U must be admin']);
             }
         }
         return $next($request);
