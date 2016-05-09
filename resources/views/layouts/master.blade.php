@@ -7,8 +7,8 @@
     {{--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">--}}
     {{--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>--}}
     {{--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>--}}
-    <link rel="stylesheet" href="/css/mystyle.css">
-    <link rel="stylesheet" href="/css/app.css">
+    {{--<link rel="stylesheet" href="/css/mystyle.css">--}}
+    <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <style>
 
     </style>
@@ -40,7 +40,6 @@
             @if (Auth::user())
               <li><a href="/settings">{{ Auth::user()->name }}</a></li>
               @if(!Auth::guest())
-                <li><a href="/blog/create">Create Blog</a></li>
                 <li><a href="/auth/logout">Logout</a></li>
               @endif
             @else
@@ -82,8 +81,8 @@
           </div>
         </div>
     </div>
-    <script src='/js/vendor.js'></script>
-    <script src="js/jquery.bootstrap-autohidingnavbar.min.js"></script>
+    <script src="{{ asset("js/vendor.js") }}"></script>
+    <script src="{{ asset("js/jquery.bootstrap-autohidingnavbar.min.js") }}"></script>
 
     <script>
         $("nav.navbar-fixed-top").autoHidingNavbar();

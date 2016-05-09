@@ -1,9 +1,9 @@
-@extends('layouts.master')
+@extends('admin.dashboard')
 
-@section('title', 'Create Topic')
+@section('title', 'Create Blog')
 
 @section('content')
-    <form class="form-horizontal" method="post" action="/blog/create">
+    <form class="form-horizontal" method="post" action="/admin/blog/create">
         {!! csrf_field() !!}
         <div class="form-group">
             <label for="title" class="col-sm-2 control-label">Title</label>
