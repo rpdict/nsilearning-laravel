@@ -25,10 +25,11 @@ Route::get('test', 'TestController@index');
 
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/admin/createBlog', 'BlogController@showCreateBlog');
-    Route::post('/admin/createBlog', 'BlogController@create');
-    Route::post('/blog/show/{id}/replies', 'BlogController@createReply');
-    Route::get('admin', function () {return view('admin.dashboard');});
+    Route::get('admin/createBlog', 'BlogController@showCreateBlog');
+    Route::post('admin/createBlog', 'BlogController@create');
+    Route::post('blog/show/{id}/replies', 'BlogController@createReply');
+    Route::get('admin', 'BlogController@showAdminOperate');
+
 });
 
 

@@ -29,6 +29,10 @@ class BlogController extends Controller
         return redirect("/blog/show/{$blog->id}");
     }
 
+    public function showAdminOperate(){
+        return view('admin.dashboard');
+    }
+
 //    public function view($topicId)
 //    {
 //        $topic = Topic::findOrFail($topicId);
