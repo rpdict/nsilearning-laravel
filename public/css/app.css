@@ -5,6 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url("tinyScreen.css") screen and (max-device-width: 400px);
+@import url("smallScreen.css") screen and (min-width: 400px) and (max-device-width: 600px);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5752,9 +5754,6 @@ button.close {
 body {
   padding-top: 50px; }
 
-.course_list li {
-  list-style-type: none; }
-
 .navbar-default {
   background-color: rgba(255, 255, 255, 0.9);
   border-color: #e7e7e7; }
@@ -5780,7 +5779,7 @@ body {
 
 .img_hover {
   height: 51.5%;
-  width: calc(100% - 2px);
+  max-width: calc(100% - 2px);
   background-color: transparent;
   position: absolute;
   left: 1px;
@@ -5790,9 +5789,10 @@ body {
 .courseimage {
   margin-left: 1px;
   margin-top: 1px;
-  width: calc(100% - 2px); }
+  max-width: calc(100% - 2px); }
 
 .course_list li {
+  list-style-type: none;
   border: 1px solid #eaeaea;
   background-color: #FFFFFF;
   width: 23%;
@@ -5827,7 +5827,7 @@ body {
 
 .courseinfo {
   height: 25px;
-  width: 70px;
+  width: 28%;
   color: #FFF;
   background-color: #1caaea;
   position: absolute;
