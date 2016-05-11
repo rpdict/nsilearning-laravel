@@ -22,13 +22,16 @@ Route::get('/blog/show/{id}', 'BlogsController@showPost');
 
 
 Route::get('test', 'TestController@index');
+Route::get('admin', function (){
+    return redirect('admin/index');
+});
 
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/createBlog', 'BlogController@showCreateBlog');
     Route::post('admin/createBlog', 'BlogController@create');
     Route::post('blog/show/{id}/replies', 'BlogController@createReply');
-    Route::get('admin', 'BlogController@showAdminOperate');
+    Route::get('admin/index', 'BlogsController@showAdminOperate');
 
 });
 

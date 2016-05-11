@@ -69,6 +69,7 @@ desired effect
                 {{--{{ $page_title or "Page Title" }}--}}
                 {{--<small>{{ $page_description or null }}</small>--}}
                 @yield('title')
+                <small>@yield('smallTitle')</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>

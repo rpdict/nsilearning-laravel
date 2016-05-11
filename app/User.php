@@ -11,6 +11,8 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
+
     protected $fillable = [
         'name', 'email', 'password', 'is_admin',
     ];
@@ -33,4 +35,10 @@ class User extends Authenticatable
     {
         return self::orderBy('updated_at', 'desc')->paginate(48);
     }
+
+    public function user()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }

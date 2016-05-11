@@ -30,7 +30,7 @@ class BlogController extends Controller
     }
 
     public function showAdminOperate(){
-        return view('admin.dashboard');
+        return view('admin.index');
     }
 
 //    public function view($topicId)

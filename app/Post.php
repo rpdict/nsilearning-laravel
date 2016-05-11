@@ -29,4 +29,8 @@ class Post extends Model
         $blog->save();
         return $blog;
     }
+
+    public function author() {
+        return $this->belongsTo(User::class);
+    }
 }
