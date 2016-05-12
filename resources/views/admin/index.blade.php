@@ -26,20 +26,23 @@
                             <tr>
                                 <th>ID</th>
                                 <th>User</th>
-                                <th>Date</th>
                                 <th>Title</th>
+                                <th>Date</th>
                                 <th>Actions</th>
                             </tr>
                             @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $post->id }}</td>
                                     <td><?php echo $post->author->name; ?></td>
-                                    <td>{{ $post->created_at->format('Y/m/d H:i') }}</td>
                                     {{--<td><span class="label label-success">Approved</span></td>--}}
                                     <td><a href="/blog/show/{{ $post->id }}">{{ $post->title }}</a></td>
+                                    <td>{{ $post->created_at->format('Y/m/d H:i') }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-xs btn-primary"><span class="fa fa-edit">Edit</span></button>
-                                        <button type="button" class="btn btn-xs btn-warning"><span class="fa fa-eye">View</span></button>
+                                        <form method="post" action="/admin/index">
+                                            <button class="btn btn-xs btn-primary" name="edit"><span class="fa fa-edit"></span>Edit</button>
+                                            <button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>
+                                            <button class="btn btn-xs btn-danger" name="delete"><span class="fa fa-remove"></span>Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

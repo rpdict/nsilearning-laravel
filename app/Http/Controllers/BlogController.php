@@ -29,9 +29,7 @@ class BlogController extends Controller
         return redirect("/blog/show/{$blog->id}");
     }
 
-    public function showAdminOperate(){
-        return view('admin.index');
-    }
+
 
 //    public function view($topicId)
 //    {

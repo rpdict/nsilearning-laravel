@@ -22,7 +22,7 @@ class BlogsController extends Controller
         return view('blog.post')->withPost($post);
     }
 
-    public function showAdminOperate()
+    public function showBlogList()
     {
         $posts = Post::with('author')->get();
         return view('admin.index', compact('posts'));
