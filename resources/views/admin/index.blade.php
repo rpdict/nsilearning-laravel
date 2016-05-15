@@ -38,10 +38,14 @@
                                     <td><a href="/blog/show/{{ $post->id }}">{{ $post->title }}</a></td>
                                     <td>{{ $post->created_at->format('Y/m/d H:i') }}</td>
                                     <td>
-                                        <form method="post" action="/admin/index">
-                                            <button class="btn btn-xs btn-primary" name="edit"><span class="fa fa-edit"></span>Edit</button>
-                                            <button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>
-                                            <button class="btn btn-xs btn-danger" name="delete"><span class="fa fa-remove"></span>Delete</button>
+                                        <form class="operate" method="post" action="">
+                                            <button type="submit" class="btn btn-xs btn-primary" name="edit"><span class="fa fa-edit"></span>Edit</button>
+                                        </form>
+                                        {{--<form class="operate" method="post" action="/admin/index/view">--}}
+                                            {{--<button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>--}}
+                                        {{--</form>--}}
+                                        <form class="operate" method="post" action="">
+                                            <button type="submit" class="btn btn-xs btn-danger" name="delete"><span class="fa fa-remove"></span>Delete</button>
                                         </form>
                                     </td>
                                 </tr>

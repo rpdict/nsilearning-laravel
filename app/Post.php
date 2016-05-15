@@ -30,6 +30,13 @@ class Post extends Model
         return $blog;
     }
 
+    public static function removeBlog($user, $blogFields){
+        $blog = new self($blogFields);
+        $blog->author_id = $user->id;
+        $blog->save();
+        return $blog;
+    }
+
     public function author() {
         return $this->belongsTo(User::class);
     }
