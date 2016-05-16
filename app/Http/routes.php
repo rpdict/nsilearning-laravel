@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/index', 'BlogsController@showBlogList');
     Route::post ('admin/index/edit', 'IndexController@showEdit');
     Route::post ('admin/index/view', 'IndexController@showView');
-    Route::post ('admin/index/delete', 'IndexController@delete');
+    Route::post ('admin/index/removeBlog', 'IndexController@removeBlog');
 
 });
 

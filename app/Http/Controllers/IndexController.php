@@ -24,21 +24,13 @@ class IndexController extends Controller
 
     }
 
-    public function destroy($id)
+    public function removeBlog(Request $request)
     {
-        $childMenus = Post::where('parent_id', '=', $id)->get()->toArray();
+        Post::destroy($request->only('operate'));
+//        $page = Post::find($id);
+//        $page->delete();
 
-        if ( ! empty($childMenus)) {
-            return redirect()->back()->withErrors("请先删除其下级分类");
-        }
-
-        try {
-            if (Post::destroy($id)) {
-                return redirect()->back()->withSuccess('删除菜单成功');
-            }
-        } catch (\Exception $e) {
-            return redirect()->back()->withErrors(array('error' => $e->getMessage()));
-        }
+        return redirect("/admin/index");
     }
 
 }

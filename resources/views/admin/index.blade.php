@@ -33,18 +33,23 @@
                             @foreach ($posts as $post)
                                 <tr>
                                     <td>{{ $post->id }}</td>
-                                    <td><?php echo $post->author->name; ?></td>
+                                    <td>{{ $post->author->name }}</td>
                                     {{--<td><span class="label label-success">Approved</span></td>--}}
                                     <td><a href="/blog/show/{{ $post->id }}">{{ $post->title }}</a></td>
                                     <td>{{ $post->created_at->format('Y/m/d H:i') }}</td>
                                     <td>
-                                        <form class="operate" method="post" action="">
+                                        <form class="operate" method="post" action="{{action("IndexController@showEdit")}}">
+                                            {!! csrf_field() !!}
                                             <button type="submit" class="btn btn-xs btn-primary" name="edit"><span class="fa fa-edit"></span>Edit</button>
                                         </form>
                                         {{--<form class="operate" method="post" action="/admin/index/view">--}}
                                             {{--<button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>--}}
                                         {{--</form>--}}
-                                        <form class="operate" method="post" action="">
+                                        <form class="operate" method="post" action="{{action("IndexController@removeBlog")}}">
+                                            {!! csrf_field() !!}
+                                            <input type="hidden" name="operate" value="{{ $post->id }}">
+                                            {{--<input name="_method" type="hidden" value="DELETE">--}}
+                                            {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                                             <button type="submit" class="btn btn-xs btn-danger" name="delete"><span class="fa fa-remove"></span>Delete</button>
                                         </form>
                                     </td>
