@@ -5,6 +5,7 @@ namespace Demo\Http\Controllers;
 use Demo\Post;
 use Carbon\Carbon;
 use Demo\User;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class BlogsController extends Controller
 {
@@ -16,9 +17,10 @@ class BlogsController extends Controller
         return view('blog.index', compact('posts'));
     }
 
-    public function showPost($id)
+    public function showBlog($id)
     {
         $post = Post::whereId($id)->firstOrFail();
+        $post->content = Markdown::convertToHtml($post->content);;
         return view('blog.post')->withPost($post);
     }
 

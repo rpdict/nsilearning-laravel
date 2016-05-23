@@ -12,6 +12,7 @@ use Demo\User;
 use Illuminate\Http\Request;
 use Demo\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 class UsersController extends Controller {
     protected $layout = "layouts.master";
@@ -31,6 +32,7 @@ class UsersController extends Controller {
     public function store(Request $request)
     {
         $name = $request->input('name');
+        $name = Markdown::convertToHtml('# foo #');
 
         //
         return view('greeting', ['name' => $name]);
