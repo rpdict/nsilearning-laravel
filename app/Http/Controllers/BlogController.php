@@ -4,12 +4,10 @@ namespace Demo\Http\Controllers;
 
 use Demo\Http\Requests;
 use Demo\Http\Controllers\Controller;
-
 use Demo\Post;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
 
 
 class BlogController extends Controller
@@ -29,7 +27,28 @@ class BlogController extends Controller
         return redirect("/blog/show/{$blog->id}");
     }
 
+    public function showEdit($id){
+        $post = Post::findOrFail($id);
+        return view('blog.update')->withPost($post);
+    }
 
+    public function updateBlog(Request $request){
+        $blog = Post::findOrFail(Input::get('blogid'));
+        $blog->title = Input::get('title');
+        $blog->content = Input::get('content');
+//        $blog->author_id = Auth::user()->id;
+        $blog->save();
+        return redirect("/blog/show/{$blog->id}");
+    }
+
+    public function removeBlog(Request $request)
+    {
+        Post::destroy($request->only('blogid'));
+//        $page = Post::find($id);
+//        $page->delete();
+
+        return redirect("/admin/index");
+    }
 
 //    public function view($topicId)
 //    {

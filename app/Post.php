@@ -30,8 +30,6 @@ class Post extends Model
         return $blog;
     }
 
-
-
     public function author() {
         return $this->belongsTo(User::class);
     }

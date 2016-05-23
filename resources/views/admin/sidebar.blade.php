@@ -31,8 +31,8 @@
         <ul class="sidebar-menu">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li {{ Request::is('admin/index') ? 'class=active' : '' }}><a href="/admin/index"><i class="fa fa-link"></i> <span>Index</span></a></li>
-            <li {{ Request::is('admin/createBlog') ? 'class=active' : '' }}><a href="/admin/createBlog"><i class="fa fa-link"></i> <span>Create Blog</span></a></li>
+            <li {{ Request::is('admin/index') ? 'class=active' : '' }}><a href="/admin/index"><i class="fa fa-table"></i> <span>Index</span></a></li>
+            <li {{ Request::is('admin/createBlog') ? 'class=active' : '' }}><a href="/admin/createBlog"><i class="fa fa-edit"></i> <span>Create Blog</span></a></li>
             <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>

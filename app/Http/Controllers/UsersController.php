@@ -32,9 +32,7 @@ class UsersController extends Controller {
     public function store(Request $request)
     {
         $name = $request->input('name');
-        $name = Markdown::convertToHtml('# foo #');
-
-        //
+//        $name = Markdown::convertToHtml('# foo #');
         return view('greeting', ['name' => $name]);
     }
 

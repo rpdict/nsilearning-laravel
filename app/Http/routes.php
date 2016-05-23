@@ -32,9 +32,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('admin/createBlog', 'BlogController@create');
     Route::post('blog/show/{id}/replies', 'BlogController@createReply');
     Route::get('admin/index', 'BlogsController@showBlogList');
-    Route::post ('admin/index/edit', 'IndexController@showEdit');
-    Route::post ('admin/index/view', 'IndexController@showView');
-    Route::post ('admin/index/removeBlog', 'IndexController@removeBlog');
+    Route::get ('admin/index/edit/{id}', 'BlogController@showEdit');
+    Route::post ('admin/index/edit', 'BlogController@updateBlog');
+    Route::post ('admin/index/removeBlog', 'BlogController@removeBlog');
 
 });
 

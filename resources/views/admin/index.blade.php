@@ -9,15 +9,15 @@
                 <div class="box-header">
                     <h3 class="box-title">Responsive Hover Table</h3>
 
-                    <div class="box-tools">
-                        <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+                    {{--<div class="box-tools">--}}
+                        {{--<div class="input-group input-group-sm" style="width: 150px;">--}}
+                            {{--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">--}}
 
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                            {{--<div class="input-group-btn">--}}
+                                {{--<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -38,16 +38,16 @@
                                     <td><a href="/blog/show/{{ $post->id }}">{{ $post->title }}</a></td>
                                     <td>{{ $post->created_at->format('Y/m/d H:i') }}</td>
                                     <td>
-                                        <form class="operate" method="post" action="{{action("IndexController@showEdit")}}">
+                                        <form class="operate" method="get" action="{{action("BlogController@showEdit",[$post->id])}}">
                                             {!! csrf_field() !!}
                                             <button type="submit" class="btn btn-xs btn-primary" name="edit"><span class="fa fa-edit"></span>Edit</button>
                                         </form>
                                         {{--<form class="operate" method="post" action="/admin/index/view">--}}
                                             {{--<button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>--}}
                                         {{--</form>--}}
-                                        <form class="operate" method="post" action="{{action("IndexController@removeBlog")}}">
+                                        <form class="operate" method="post" action="{{action("BlogController@removeBlog")}}">
                                             {!! csrf_field() !!}
-                                            <input type="hidden" name="operate" value="{{ $post->id }}">
+                                            <input type="hidden" name="blogid" value="{{ $post->id }}">
                                             {{--<input name="_method" type="hidden" value="DELETE">--}}
                                             {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
                                             <button type="submit" class="btn btn-xs btn-danger" name="delete"><span class="fa fa-remove"></span>Delete</button>
