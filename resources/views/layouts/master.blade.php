@@ -28,7 +28,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href="/blog">Blogs</a></li>
-            <li><a href="/tags">Tags</a></li>
             <li><a href="/about">About</a></li>
             @if(!Auth::guest())
                 @if (Auth::user()->is_admin)
