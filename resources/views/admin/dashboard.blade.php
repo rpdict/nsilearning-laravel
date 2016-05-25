@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="{{ asset("bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("bower_components/AdminLTE/dist/css/skins/skin-green-light.min.css")}}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,7 +52,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green-light sidebar-mini">
 <div class="wrapper">
 
     <!-- Main Header -->
@@ -94,7 +94,7 @@ desired effect
     @include('admin.footer')
 
     <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
+    <aside class="control-sidebar control-sidebar-light">
         <!-- Create the tabs -->
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
             <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
@@ -164,6 +164,7 @@ desired effect
         </div>
     </aside>
     <!-- /.control-sidebar -->
+
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
@@ -183,5 +184,16 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the
      fixed layout. -->
+
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/fastclick/fastclick.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/sparkline/jquery.sparkline.min.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js") }}"></script>--}}
+
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/jvectormap/jquery-jvectormap-world-mill-en.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/plugins/chartjs/Chart.min.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/dist/js/pages/dashboard2.js") }}"></script>--}}
+{{--<script src="{{ asset("bower_components/AdminLTE/dist/js/demo.js") }}"></script>--}}
+
 </body>
 </html>
