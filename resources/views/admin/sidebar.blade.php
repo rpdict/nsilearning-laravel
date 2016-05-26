@@ -6,10 +6,10 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset("bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+                <img src="{{ Gravatar::src(Auth::user()->email, 160) }}" class="img-circle" alt="{{ $post->author->name }}">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{ Auth::user()->name }}</p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>

@@ -155,7 +155,8 @@ return [
         Demo\Providers\AuthServiceProvider::class,
         Demo\Providers\EventServiceProvider::class,
         Demo\Providers\RouteServiceProvider::class,
-        'GrahamCampbell\Markdown\MarkdownServiceProvider'
+        'GrahamCampbell\Markdown\MarkdownServiceProvider',
+        Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
 
     ],
 
@@ -202,7 +203,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
+        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown',
+        'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
     ],
 
 ];
