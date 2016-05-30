@@ -1,7 +1,12 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+html {
+  height: 100%;
+}
+
 body {
   padding-top: 50px;
+  height: 100%;
 }
 
 .navbar-default{
@@ -20,7 +25,8 @@ body {
 }
 
 .main{
-  min-height: 650px;
+  min-height: 100%;
+  //margin: 0 auto -52px;
 }
 .main-footer {
   background: #fff;
@@ -35,7 +41,7 @@ body {
   //height: 140px;
   height: 51.5%;
   //width: 228px;
-  max-width:calc(100% - 2px);
+  max-width: calc(100% - 2px);
   background-color: rgba(0,0,0,0);
   position: absolute;
   left: 1px;

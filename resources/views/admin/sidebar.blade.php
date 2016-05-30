@@ -6,7 +6,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ Gravatar::src(Auth::user()->email, 160) }}" class="img-circle" alt="{{ $post->author->name }}">
+                <img src="{{ Gravatar::src(Auth::user()->email, 160) }}" class="img-circle" alt="{{ Auth::user()->name }}">
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->name }}</p>
