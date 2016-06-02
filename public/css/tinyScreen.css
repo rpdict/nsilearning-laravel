@@ -1,3 +1,4 @@
 .course_list li{
     min-width: 85%;
+    max-width: 250px;
 }

@@ -5,8 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-@import url("tinyScreen.css") screen and (max-device-width: 400px);
-@import url("smallScreen.css") screen and (min-width: 400px) and (max-device-width: 600px);
+/*@import url("tinyScreen.css") screen and (max-width: 400px);*/
+/*@import url("smallScreen.css") screen and (min-width: 400px) and (max-width: 800px);*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

@@ -8,6 +8,7 @@
     {{--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>--}}
     {{--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>--}}
     {{--<link rel="stylesheet" href="/css/mystyle.css">--}}
+
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <style>
 
@@ -60,24 +61,24 @@
           <div class="col-md-9">
             @yield('content')
           </div>
-          <div class="col-md-3">
-            @section('sidebar')
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <ul>
-                  <li>
+          {{--<div class="col-md-3">--}}
+            {{--@section('sidebar')--}}
+            {{--<div class="panel panel-default">--}}
+              {{--<div class="panel-body">--}}
+                {{--<ul>--}}
+                  {{--<li>--}}
 {{--                    {{ $globalStatistics['topicsCount'] }}--}}
-                    Blogs
-                  </li>
-                  <li>
+                    {{--Blogs--}}
+                  {{--</li>--}}
+                  {{--<li>--}}
 {{--                    {{ $globalStatistics['usersCount'] }}--}}
-                    Users
-                  </li>
-                </ul>
-              </div>
-            </div>
-            @show
-          </div>
+                    {{--Users--}}
+                  {{--</li>--}}
+                {{--</ul>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+            {{--@show--}}
+          {{--</div>--}}
         </div>
     </div>
     <script src="{{ asset("js/vendor.js") }}"></script>
