@@ -19,12 +19,12 @@ class BlogsController extends Controller
 //            ->paginate();
             ->paginate(config('blog.posts_per_page'));
 //        return $posts;
-        return view('blog.index', compact('posts'));
+//        return view('blog.index', compact('posts'));
 //        return view('blog.index', json_encode(compact('posts')));
 //        return response()->json($posts);
 //        $posts = response()->json($posts);
 //        return view('blog.index',compact('posts'));
-//        return view('greeting')->withPosts($posts);
+        return view('greeting')->withPosts($posts);
 //        return View::make('greeting')->with($posts);
 //        echo $posts;
     }
@@ -32,7 +32,7 @@ class BlogsController extends Controller
     public function showBlog($id)
     {
         $post = Post::whereId($id)->firstOrFail();
-        $post->content = Markdown::convertToHtml($post->content);;
+        $post->content = Markdown::convertToHtml($post->content);
         return view('blog.post')->withPost($post);
     }
 

@@ -17,7 +17,7 @@
         //echo var_dump($posts->getData(true));
         //echo print_r($posts->getData(true));
         //echo "<br />";
-        echo print_r($posts->content());
+//        echo print_r($posts->content());
         //echo print_r($blogsinfo['current_page']);
     ?>
 
@@ -123,9 +123,11 @@
     <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
     <script src="{{ asset("js/vendor.js") }}"></script>
     <script src="{{ asset("js/dropload.min.js") }}"></script>
-    <script>
-//        var obj = eval ("(" +  blog  + ")");
-//        alert(obj.data);
+    <script type="text/javascript">
+        //var obj = "<?php //echo json_encode($posts);?>";
+        str = JSON.stringify(<?php echo json_encode($posts);?>);
+        document.write(str);
+        //document.write(console.log(<?php //echo json_encode($posts);?>));
 
 //            $.getJSON("http://homestead.app/blog",
 //                    function (blog) {
@@ -133,56 +135,56 @@
 //                    }
 //            );
 
-        $(function(){
-            var counter = 0;
-            // 每页展示4个
-            var num = 4;
-            var pageStart = 0,pageEnd = 0;
-
-            // dropload
-            $('.content').dropload({
-                scrollArea : window,
-                loadDownFn : function(me){
-                    $.ajax({
-                        type: 'GET',
-                        url: 'json/more.json',
-                        dataType: 'json',
-                        success: function(data){
-                            var result = '';
-                            counter++;
-                            pageEnd = num * counter;
-                            pageStart = pageEnd - num;
-
-                            for(var i = pageStart; i < pageEnd; i++){
-                                result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
-                                        +'<img src="'+data.lists[i].pic+'" alt="">'
-                                        +'<h3>'+data.lists[i].title+'</h3>'
-                                        +'<span class="date">'+data.lists[i].date+'</span>'
-                                        +'</a>';
-                                if((i + 1) >= data.lists.length){
-                                    // 锁定
-                                    me.lock();
-                                    // 无数据
-                                    me.noData();
-                                    break;
-                                }
-                            }
-                            // 为了测试，延迟1秒加载
-                            setTimeout(function(){
-                                $('.lists').append(result);
-                                // 每次数据加载完，必须重置
-                                me.resetload();
-                            },1000);
-                        },
-                        error: function(xhr, type){
-                            // alert('Ajax error!');
-                            // 即使加载出错，也得重置
-                            me.resetload();
-                        }
-                    });
-                }
-            });
-        });
+//        $(function(){
+//            var counter = 0;
+//            // 每页展示4个
+//            var num = 4;
+//            var pageStart = 0,pageEnd = 0;
+//
+//            // dropload
+//            $('.content').dropload({
+//                scrollArea : window,
+//                loadDownFn : function(me){
+//                    $.ajax({
+//                        type: 'GET',
+//                        url: 'json/more.json',
+//                        dataType: 'json',
+//                        success: function(data){
+//                            var result = '';
+//                            counter++;
+//                            pageEnd = num * counter;
+//                            pageStart = pageEnd - num;
+//
+//                            for(var i = pageStart; i < pageEnd; i++){
+//                                result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+//                                        +'<img src="'+data.lists[i].pic+'" alt="">'
+//                                        +'<h3>'+data.lists[i].title+'</h3>'
+//                                        +'<span class="date">'+data.lists[i].date+'</span>'
+//                                        +'</a>';
+//                                if((i + 1) >= data.lists.length){
+//                                    // 锁定
+//                                    me.lock();
+//                                    // 无数据
+//                                    me.noData();
+//                                    break;
+//                                }
+//                            }
+//                            // 为了测试，延迟1秒加载
+//                            setTimeout(function(){
+//                                $('.lists').append(result);
+//                                // 每次数据加载完，必须重置
+//                                me.resetload();
+//                            },1000);
+//                        },
+//                        error: function(xhr, type){
+//                            // alert('Ajax error!');
+//                            // 即使加载出错，也得重置
+//                            me.resetload();
+//                        }
+//                    });
+//                }
+//            });
+//        });
     </script>
 
 
