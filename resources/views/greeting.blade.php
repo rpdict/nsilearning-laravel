@@ -124,8 +124,9 @@
     <script src="{{ asset("js/vendor.js") }}"></script>
     <script src="{{ asset("js/dropload.min.js") }}"></script>
     <script type="text/javascript">
-        //var obj = "<?php //echo json_encode($posts);?>";
+        //var obj = <?php //echo json_encode($posts);?>;
         str = JSON.stringify(<?php echo json_encode($posts);?>);
+//        document.write(obj);
         document.write(str);
         //document.write(console.log(<?php //echo json_encode($posts);?>));
 
@@ -134,7 +135,26 @@
 //                        alert(blog);
 //                    }
 //            );
-
+//        $('.content').dropload({
+//            scrollArea : window,
+//            loadDownFn : function(me){
+//                $.ajax({
+//                    type: 'GET',
+//                    url: 'json/more.json',
+//                    dataType: 'json',
+//                    success: function(data){
+//                        document.write(data);
+//                        // 每次数据加载完，必须重置
+//                        me.resetload();
+//                    },
+//                    error: function(xhr, type){
+//                        alert('Ajax error!');
+//                        // 即使加载出错，也得重置
+//                        me.resetload();
+//                    }
+//                });
+//            }
+//        });
 //        $(function(){
 //            var counter = 0;
 //            // 每页展示4个

@@ -17,6 +17,10 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Route::get('/VueTest', function(){
+    return view('VueTest');
+});
+
 Route::get('blog', 'BlogsController@index');
 Route::get('/blog/show/{id}', 'BlogsController@showBlog');
 
