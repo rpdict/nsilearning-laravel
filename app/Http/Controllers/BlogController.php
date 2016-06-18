@@ -50,6 +50,11 @@ class BlogController extends Controller
         return redirect("/admin/index");
     }
 
+    public function showBlogList()
+    {
+        $posts = Post::with('author')->get();
+        return view('admin.index', compact('posts'));
+    }
 //    public function view($topicId)
 //    {
 //        $topic = Topic::findOrFail($topicId);

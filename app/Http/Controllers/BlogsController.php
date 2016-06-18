@@ -23,8 +23,8 @@ class BlogsController extends Controller
 //        return view('blog.index', json_encode(compact('posts')));
 //        return response()->json($posts);
 //        $posts = response()->json($posts);
-//        return view('blog.index',compact('posts'));
-        return view('greeting')->withPosts($posts);
+        return view('blog.index',compact('posts'));
+//        return view('greeting')->withPosts($posts);
 //        return View::make('greeting')->with($posts);
 //        echo $posts;
     }
@@ -36,9 +36,5 @@ class BlogsController extends Controller
         return view('blog.post')->withPost($post);
     }
 
-    public function showBlogList()
-    {
-        $posts = Post::with('author')->get();
-        return view('admin.index', compact('posts'));
-    }
+
 }

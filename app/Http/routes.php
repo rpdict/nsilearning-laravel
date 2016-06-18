@@ -24,22 +24,20 @@ Route::get('/VueTest', function(){
 Route::get('blog', 'BlogsController@index');
 Route::get('/blog/show/{id}', 'BlogsController@showBlog');
 
-
 Route::get('test', 'TestController@index');
+
 Route::get('admin', function (){
     return redirect('admin/index');
 });
-
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('admin/createBlog', 'BlogController@showCreateBlog');
     Route::post('admin/createBlog', 'BlogController@create');
     Route::post('blog/show/{id}/replies', 'BlogController@createReply');
-    Route::get('admin/index', 'BlogsController@showBlogList');
+    Route::get('admin/index', 'BlogController@showBlogList');
     Route::get ('admin/index/edit/{id}', 'BlogController@showEdit');
     Route::post ('admin/index/edit', 'BlogController@updateBlog');
     Route::post ('admin/index/removeBlog', 'BlogController@removeBlog');
-
 });
 
 
