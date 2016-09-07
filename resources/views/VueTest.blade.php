@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>VueTest</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
+    <script src="{{ asset("/js/vue.js") }}"></script>
 </head>
 
 <body>
@@ -26,24 +26,59 @@
     }
 </style>
 <div id="example-2">
-    <button v-on:click="show">Say Hi</button>
     <div v-if="show" transition="expand">hello</div>
-    <div v-if="show" :transition="transitionName">hello</div>
+    <button v-on:click="show = !show">Say Hi</button>
 </div>
 
+{{--<div id="demo">--}}
+    {{--<div v-if="show" transition="expand">hello</div>--}}
+    {{--<button @click="show = !show">Toggle</button>--}}
+{{--</div>--}}
     <script>
-        new Vue({
+        var vm = new Vue({
             el: '#example-2',
             data: {
                 show: true,
                 transitionName: 'fade'
             },
             methods: {
-                show: function () {
-                    show: false
+                greet: function () {
+                    vm.$data.show = false
                 }
             }
         })
+
+
+//        new Vue({
+//            el: '#demo',
+//            data: {
+//                show: true,
+//                transitionState: 'Idle'
+//            },
+//            transitions: {
+//                expand: {
+//                    beforeEnter: function (el) {
+//                        el.textContent = 'beforeEnter'
+//                    },
+//                    enter: function (el) {
+//                        el.textContent = 'enter'
+//                    },
+//                    afterEnter: function (el) {
+//                        el.textContent = 'afterEnter'
+//                    },
+//                    beforeLeave: function (el) {
+//                        el.textContent = 'beforeLeave'
+//                    },
+//                    leave: function (el) {
+//                        el.textContent = 'leave'
+//                    },
+//                    afterLeave: function (el) {
+//                        el.textContent = 'afterLeave'
+//                    }
+//                }
+//            }
+//        })
+
     </script>
 </body>
 </html>

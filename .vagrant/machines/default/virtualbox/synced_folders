@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/nsilearning-laravel":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/nsilearning-laravel","hostpath":"/Users/Apple-NETwork/Nester/PHP/nsilearning-laravel","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Apple-NETwork/Nester/PHP/nsilearning-laravel","disabled":false,"__vagrantfile":true}}}
