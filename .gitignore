@@ -35,3 +35,4 @@ Homestead.json
 /.idea
 /.vagrant
 .gitattributes
+Vagrantfile
