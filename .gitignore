@@ -34,12 +34,4 @@ Homestead.json
 .env
 /.idea
 /.vagrant
-=======
-/vendor
-/node_modules
-Homestead.yaml
-Homestead.json
-.env
-/.idea
-/.vagrant
->>>>>>> master
+.gitattributes
