@@ -39,7 +39,7 @@ class UsersController extends Controller {
     public function About()
     {
         //
-        return view('about.about');
+        return view('about.home');
     }
 
     public function getRegister() {

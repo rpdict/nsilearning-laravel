@@ -9,7 +9,7 @@
     {{--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>--}}
     {{--<link rel="stylesheet" href="/css/mystyle.css">--}}
 
-    <link rel="stylesheet" href="{{ asset("css/app.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/main.css") }}">
     <style>
 
     </style>
