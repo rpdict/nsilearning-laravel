@@ -46,7 +46,6 @@
                                             {{--<button class="btn btn-xs btn-warning" name="view"><span class="fa fa-eye"></span>View</button>--}}
                                         {{--</form>--}}
                                         <form class="operate" method="post" action="{{action("BlogController@removeBlog")}}">
-                                            {!! csrf_field() !!}
                                             <input type="hidden" name="blogid" value="{{ $post->id }}">
                                             {{--<input name="_method" type="hidden" value="DELETE">--}}
                                             {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}

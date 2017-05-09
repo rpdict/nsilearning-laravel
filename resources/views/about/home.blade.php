@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>科技背景</title>
+        <title>关于</title>
         <meta name="description" content="Change OR Die">
         <link rel="stylesheet" href="{{ asset("css/main.css") }}">
         <link rel="stylesheet" href="{{ asset("css/homePage.css") }}">
